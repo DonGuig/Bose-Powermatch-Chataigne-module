@@ -1,0 +1,80 @@
+{
+  "name":"Bose Powermatch",
+  "type":"TCP Client",
+  "path":"Hardware",
+  
+  "version":"0.0.1",
+  "description":"Control Bose Powermatch devices",
+  "url":"https://github.com/DonGuig/Bose-Powermatch-Chataigne-module",
+  "downloadURL":"https://github.com/DonGuig/Bose-Powermatch-Chataigne-module/archive/master.zip",
+
+  "hasInput":true,
+  "hasOutput":true, 
+
+  "hideDefaultCommands":true,
+  
+  "defaults":
+  {	
+    "protocol":"Lines",
+    "autoAdd":false,
+    "messageStructure":"Space Separated",
+    "firstValueIsTheName":false,
+    "receiveFrequency":100,
+    "output":
+    {
+      "remotePort":10055,
+      "local":false
+    }
+  },
+
+  "parameters":
+  {
+
+  },
+
+  "hideDefaultParameters": [ "autoAdd", "protocol", "messageStructure", "firstValueIsTheName", "receiveFrequency", "output/remotePort", "output/local"],
+
+  "scripts": 
+  [
+    "moduleScript.js"
+  ],
+
+  "values":
+  {
+    "Disable Standby":
+    {
+      "type":"Trigger"
+    },
+    "Enable Standby":
+    {
+      "type":"Trigger"
+    }
+  },
+
+  "commands":
+  {
+    "Disable Standby":
+    {
+      "menu":"",  
+      "callback":"disable_standby"
+    },
+    "Enable Standby":
+    {
+      "menu":"",  
+      "callback":"enable_standby"
+    },
+    "Send custom message":
+    {
+      "menu":"",  
+      "callback":"send_custom_message",
+      "parameters":
+      {
+        "Message":
+        {
+          "type":"String",
+          "default":"message"
+        }
+      }
+    }
+  }
+}
