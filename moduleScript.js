@@ -12,8 +12,8 @@ function moduleValueChanged(value) {
   if (!value.isParameter()) {
     // if it is a trigger
     script.log("it is a trigger");
-    if (value.name === "enable_standby") enable_standby();
-    else if (value.name === "disable_standby") disable_standby();
+    if (value.name === "enableStandby") enable_standby();
+    else if (value.name === "disableStandby") disable_standby();
   }
 }
 
